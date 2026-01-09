@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | AI Crop Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🌱 CropAI</div>
+    <ul class="nav-links">
+  <li><a href="{{ url_for('home') }}"><button type="button">Home</button></a></li>
+<li><a href="{{ url_for('predict') }}"><button type="button">Predict</button></a></li>
+<li><a href="{{ url_for('contact') }}"><button type="button">Contact</button></a></li>
+
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="contact-section">
+    <div class="container">
+      <div class="text-center">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? We'd love to hear from you.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Contact Form -->
+        <div class="form-card">
+          <h3><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="icon" /> Send us a Message</h3>
+          <p class="description">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us what's on your mind..." required></textarea>
+
+            <button type="submit" class="btn-primary">
+              <img src="https://cdn-icons-png.flaticon.com/512/3916/3916611.png" class="btn-icon" /> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info + Office Hours -->
+        <div class="info-section">
+          <div class="info-card">
+            <div class="info-item">
+              <div class="icon-contact">
+                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="info-icon" />
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>support@cropai.com</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-contact">
+                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" class="info-icon" />
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="icon-contact">
+                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="info-icon" />
+              </div>
+              <div>
+                <h4>Address</h4>
+                <p>123 Agricultural Tech Park<br>Green Valley, CA 94043</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hours-card">
+            <h4>Office Hours</h4>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 10:00 AM - 4:00 PM</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 CropAI. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple form validation simulation
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("⚠️ Please fill in all fields.");
+        return;
+      }
+
+      alert("✅ Message sent! Thank you for contacting us.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

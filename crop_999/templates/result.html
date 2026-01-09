@@ -1,0 +1,40 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Recommendation Result | CropAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">🌱 CropAI</div>
+    <ul class="nav-links">
+<li><a href="{{ url_for('home') }}"><button type="button">Home</button></a></li>
+<li><a href="{{ url_for('predict') }}"><button type="button">Predict</button></a></li>
+<li><a href="{{ url_for('contact') }}"><button type="button">Contact</button></a></li>
+    </ul>
+  </nav>
+
+  <section class="form-container">
+    <h2>Recommended Crop</h2>
+    <p>Based on your inputs, we suggest growing:</p>
+    <div class="result-box" style="display: block;">
+      {{ crop }}
+    </div>
+    <div class="btn-container">
+      <a href="{{ url_for('predict') }}"><button type="button" class="btn-primary">Predict Again</button></a>
+      <a href="{{ url_for('home') }}"><button type="button" class="btn-secondary">Back to Home</button></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 CropAI. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
